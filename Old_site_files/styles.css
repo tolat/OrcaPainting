@@ -1,0 +1,388 @@
+
+
+
+
+
+
+/*MAIN PAGE STYLES*/
+body{
+	background-image: url(BackgroundImages/Werker.jpg);
+	background-size: contain;
+	background-color: lightgrey;
+}
+
+@font-face{
+	font-family: Avenir;
+	src: url(fonts/AvenirLTStd-Light.otf);
+}
+
+.contentBox {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -270px;
+	margin-left: -350px;
+	width: 700px;
+	height: 400px;
+	box-shadow: 0 0 10px 3px;
+	background-color: white;
+	border-radius: 2px;
+}
+
+.button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 340px;
+	height: 60px;
+	margin-top: 145px;
+	box-shadow: 0 0 10px 5px;
+	background-color: white;
+	font-family: Avenir;
+	text-align: center;
+	padding-top: 40px;
+	border-radius: 2px;
+}
+
+#galleryButton {
+	margin-left: -350px; 
+}
+
+#contactButton {
+	margin-left: 10px; 
+}
+
+.button:hover {
+	opacity: 0.8;
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#Logo {
+	width: 50%;
+	margin-left: 25%;
+	height: 60px;
+	margin-top: 10px;
+	background-image: url(Images/Logo.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#line {
+	font-size: 6pt;
+	width: 50%;
+	margin-left: 25%;
+	text-align: center;
+}
+
+#textBox {
+	width: 90%;
+	height: 155px;
+	display: block;
+	margin-left: 5%;
+	margin-top: 20px;
+	font-size: 13pt;
+	font-family: Avenir;
+	line-height: 25px;
+	text-align: justify;
+}
+
+.centerDiv {
+	width: 100%;
+	margin-top: 25px;
+	height: 25px;
+	text-align: center;
+	font-size: 13pt;
+	font-family: Avenir;
+	display: block;
+}
+
+#copyright {
+	width: 100%;
+	text-align: center;
+	font-size: 10pt;
+	color: gray;
+	font-family: Avenir;
+	background-color: white;
+}
+
+
+
+
+
+
+/*Gallery PAGE STYLES*/
+/*#galleryBox {
+	background-color: white;
+}
+
+.slideImage{
+	max-width: 100%;
+	max-height: 100%;
+}
+*/
+/*
+.photoIcon {
+	width: 20%;
+	height: 35%;
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+	margin-top: 2%;
+	background-size: 100%;
+	background-repeat: no-repeat;
+	display: inline-block;
+	box-shadow: 0 0 5px 1px;
+	background-color: transparent;
+}
+.photoIcon:hover{
+	opacity: 0.8;
+	cursor: pointer;
+}*/
+
+
+
+
+
+/*GALLERY SLIDESHOW STYLES*/
+#backContainer {
+	position: absolute;
+	top: 50%;
+	left: 5px;
+	width: 40px;
+	height: 40px;
+	margin-top: -25px;
+	background-color: black;
+	border-radius: 3px;
+	box-shadow: 0 0 5px 0px;
+	z-index: 1;
+}
+#backContainer:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+#backButton{
+	width: 60%;
+	height: 60%;
+	margin-left: 20%;
+	margin-top: 20%;
+	background-image: url(Images/prevWhite.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#nextContainer {
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	width: 40px;
+	height: 40px;
+	margin-top: -25px;
+	background-color: black;
+	border-radius: 3px;
+	box-shadow: 0 0 5px 0px;
+	z-index: 1;
+}
+#nextContainer:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+#nextButton{
+	width: 60%;
+	height: 60%;
+	margin-left: 20%;
+	margin-top: 20%;
+	background-image: url(Images/nextWhite.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+#slide {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	box-shadow: 0 0 8px 2px;
+}
+
+#closeButton {
+	position: absolute;
+	top: 50%;
+	right: 5px;
+	height: 30px;
+	width: 30px;
+	top: 5px;
+	background-color: black;
+	border-radius: 3px;
+	box-shadow: 0 0 5px 0px;
+	z-index: 1;
+}
+#closeButton:hover {
+	opacity: 0.8;
+	cursor: pointer;
+}
+
+#closeText {
+	height: 60%;
+	width: 60%;
+	margin-left: 20%;
+	margin-top: 20%;
+	font-size: 10pt;
+	font-family: Avenir;
+	text-align: center;
+	color: white;
+	background-image: url(Images/exitButton.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+/*CONTACT PAGE STYLES*/
+
+#contentBoxContact {
+	width: 1000px;
+	height: 530px;
+	margin-left: -500px;
+	margin-top: -265px;
+}
+
+#contactInfoPane {
+	background-color: none;
+	width: 420px;
+	height: 300px;
+	display: inline-block;
+	float:left;
+	font-family: Avenir;
+	font-size: 13pt;
+	
+	padding-left: 60px;
+	padding-right: 20px;
+	padding-top: 40px;
+	line-height: 30px;
+}
+
+#contactForm {
+	background-color: none;
+	width: 420px;
+	height: 400px;
+	display: inline-block;
+	float:right;
+	font-family: Avenir;
+	font-size: 14pt;
+	padding-left: 20px;
+	padding-right: 60px;
+	padding-top: 40px;
+}
+
+.entryBox{
+	width: 195px;
+	height: 30px;
+	border: 1px solid rgb(53, 62, 73);
+	border-radius: 3px;
+	color: black;
+	font-size: 11pt;
+	padding-left: 7px;
+}
+
+#firstNameLabel {
+	background-color: none;
+	display: inline-block;
+	width: 200px;
+	font-size: 10pt;
+	font-family: Avenir;	
+	padding-left: 5px;
+	padding-top: 3px;
+}
+
+#lastNameLabel {
+	background-color: none;
+	display: inline-block;
+	width: 200px;
+	font-size: 10pt;
+	font-family: Avenir;
+	padding-top: 3px;
+}
+
+#firstNameLabelMobile {
+	display: none;
+	width: 99%;
+	font-size: 10pt;
+	font-family: Avenir;	
+	padding-left: 1%;
+}
+
+#lastNameLabelMobile {
+	display: none;
+	width: 99%;
+	font-size: 10pt;
+	font-family: Avenir;
+	padding-left: 1%;
+}
+
+#submitButton {
+	border: 2px solid black;
+	border-radius: 3px;
+	background-color: white;
+	width: 80px;
+	height: 40px;
+	font-family: Avenir;
+	font-size: 11pt;
+	padding-top: 6px;
+
+}
+
+#submitButton:hover {
+	background-color: black;
+	color: white;
+	cursor: pointer;
+}
+
+.error {
+	color: red;
+	font-family: Avenir;
+	font-size: 10pt;
+}
+
+#leftListContainer {
+	background-color: none;
+	width: 300px;
+	padding-left: 50px;
+	height: 290px;
+	display: inline-block;
+	float:left;
+}
+
+#rightListContainer {
+	background-color: none;
+	width: 300px;
+	padding-left: 50px;
+	height: 290px;
+	display: inline-block;
+	float:right;
+}
+
+#homeButton {
+	display: block;
+	width: 180px;
+	height: 23px;
+	font-family: Avenir;
+	font-size: 14pt;
+	text-decoration: underline;
+	float: left;
+	margin-left: 60px;
+}
+#homeButton:hover {
+	color: grey;
+	cursor: pointer;
+}
+
+
+
+
+
+

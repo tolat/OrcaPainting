@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Bootstrap stylesheet -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+
+    <link id="stylesheet" rel="stylesheet" type="text/css" href="styles.css">
+    <script type='text/javascript' src="scripts.js"></script>
+</head>
+
+<body onload="start()">
+    <div id="navBar">
+        <div class="button galleryAccessButton" onclick=showGallery()>
+            <svg xmlns="http://www.w3.org/2000/svg" id="backButtonArrow" height="33%" fill="currentColor"
+                class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+            </svg>
+            <div id="navbarGalleryAccessText">GALLERY</div>
+        </div>
+        <div class="logoBannerContainer" onclick=scrollToTop()>
+            <div class="logoBanner">
+                <img src="Images/Logo_albino1.png" alt="">
+            </div>
+        </div>
+        <div class="button contactAccessButton" onclick=scrollToContactForm()>
+            <div>CONTACT</div>
+        </div>
+    </div>
+    <div id="loadingScreen">
+        <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div id="prevSlide" class="galleryButton"><svg xmlns="http://www.w3.org/2000/svg" onclick=reverseSlide()
+            class="buttonGraphic" width="100%" height="100%" fill="currentColor" class="bi bi-arrow-bar-left"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M12.5 15a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5zM10 8a.5.5 0 0 1-.5.5H3.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L3.707 7.5H9.5a.5.5 0 0 1 .5.5z" />
+        </svg></div>
+    <div id="swiperGallery" class="swiper-container">
+        <div class="swiper-wrapper">
+            <img class="swiper-slide" class="slide" src="GalleryImages/Peck.jpg">
+            <img class="swiper-slide" class="slide" src="GalleryImages/CP2.jpg">
+            <img class="swiper-slide" class="slide" src="GalleryImages/Sandy.jpg">
+            <img class="swiper-slide" class="slide" src="GalleryImages/Jim2.jpg">
+            <img class="swiper-slide" class="slide" src="GalleryImages/Jim.jpg">
+            <img class="swiper-slide" class="slide" src="GalleryImages/CP5.jpg">
+            <img class="swiper-slide" class="slide" src="GalleryImages/Betty.jpg">
+            <img class="swiper-slide" class="slide" src="GalleryImages/CP3.jpg">
+            <img class="swiper-slide" class="slide" src="GalleryImages/Engineer.jpg">
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination" id="paginationBullets"></div>
+    </div>
+    <div id="gallery" onclick=showGalleryMobile()>
+        <img id="s1" class="gallerySlide" src="GalleryImages/Engineer.jpg">
+        <img id="s2" class="gallerySlide" src="GalleryImages/CP3.jpg">
+        <img id="s3" class="gallerySlide" src="GalleryImages/Betty.jpg">
+        <img id="s4" class="gallerySlide" src="GalleryImages/CP5.jpg">
+        <img id="s5" class="gallerySlide" src="GalleryImages/Jim.jpg">
+        <img id="s6" class="gallerySlide" src="GalleryImages/Jim2.jpg">
+        <img id="s7" class="gallerySlide" src="GalleryImages/Sandy.jpg">
+        <img id="s8" class="gallerySlide" src="GalleryImages/CP2.jpg">
+        <img id="s9" class="gallerySlide" src="GalleryImages/Peck.jpg">
+    </div>
+    <div id="nextSlide" class="galleryButton"><svg xmlns="http://www.w3.org/2000/svg" onclick=advanceGallery()
+            class="buttonGraphic" width="100%" height="100%" fill="currentColor" class="bi bi-arrow-bar-right"
+            viewBox="0 0 16 16">
+            <path fill-rule="evenodd"
+                d="M6 8a.5.5 0 0 0 .5.5h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L12.293 7.5H6.5A.5.5 0 0 0 6 8zm-2.5 7a.5.5 0 0 1-.5-.5v-13a.5.5 0 0 1 1 0v13a.5.5 0 0 1-.5.5z" />
+        </svg></div>
+    <div id="exitGalleryButton" class="galleryButton"><svg xmlns="http://www.w3.org/2000/svg" onclick=hideGallery()
+            class="buttonGraphic" width="50%" height="50%" fill="currentColor" class="bi bi-x-circle"
+            viewBox="0 0 16 16">
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path
+                d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+        </svg>
+    </div>
+    <div id="contentContainer">
+        <section id="mainSection">
+            <div class="logoBannerContainer">
+                <div class="logoBanner">
+                    <img src="Images/Logo.png" alt="">
+                </div>
+            </div>
+            <div class="heading">
+                Welcome.
+            </div>
+            <div class="mainText">
+                We are a residential painting and home improvement company operating principally in the
+                lower mainland area of Vancouver, BC. We provide quality interior and exterior painting service, home
+                detailing, and small building projects. You can see some of our work in the
+                gallery
+                section of the site. To book a free estimate, ask for references, or inquire about our services, please
+                use
+                the contact
+                form below, or send an email to <a href="mailto: info@orcapainting.com"
+                    style="text-decoration: none; color: rgb(4, 110, 248);">info@orcapainting.com</a>.
+            </div>
+            <h3>All photos on this site are Orca Painting projects.</h3>
+            <h3 class="copywright">&copyCopyright Orca Painting 2021</h3>
+        </section>
+        <div id="buttonContainer">
+            <div class="button galleryAccessButton" onclick=showGallery()>
+                <div>GALLERY</div>
+            </div>
+            <div class="button contactAccessButton" onclick=showDesktopForm()>
+                <div>CONTACT</div>
+            </div>
+        </div>
+        <div id="desktopFormContainer">
+            <div class="contactForm" id="desktopForm">
+                <div class="heading" id="desktopFormHeading">
+                    Get in touch.
+                </div>
+                <div class="heading" style="text-align: right;" id="backButton" onclick=hideDesktopForm()>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                        class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+                    </svg>
+                    Back
+                </div>
+                <form onsubmit="return fetchpost()">
+                    <div id="namePhoneContainer">
+                        <div class="form-group" id="inputNameGroup">
+                            <label for="inputName">Name</label>
+                            <input type="text" class="form-control" id="inputName" aria-describedby="emailHelp"
+                                placeholder="Enter name" name="name" required>
+                        </div>
+                        <div class="form-group" id="inputPhoneGroup">
+                            <label for="inputPhone">Phone</label>
+                            <input type="tel" class="form-control" id="inputPhone" aria-describedby="emailHelp"
+                                placeholder="Enter phone number" name="phone" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputEmail">Email address</label>
+                        <input type="email" class="form-control" id="inputEmail" aria-describedby="emailHelp"
+                            placeholder="Enter email" name="email" required>
+                        <small id="emailHelp" class="form-text text-muted">We'll never share your phone number or email
+                            with
+                            anyone else.</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputInquiry">Reason for inquiry (briefly)</label>
+                        <textarea class="form-control" id="inputInquiry" rows="3" style="resize: none;" name="message"
+                            required></textarea>
+                    </div>
+                    <button type="submit" value="Go!" class="btn btn-primary" id="formSubmitButton"
+                        style="margin-top: 5%;">&nbsp;&nbsp;Submit&nbsp;&nbsp;</button>
+                    <h3 class="copywright" id="mobileCopywright">&copyCopyright Orca Painting 2021</h3>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="thankyouScreen">Thank you for contacting us! <br><br> We'll get back to you as soon as possible.</div>
+
+    <!-- Bootstrap Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+    <!-- Swiper JS for the mobile swiper. Credit to swiperjs.com for this feature -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+</body>
+
+</html>

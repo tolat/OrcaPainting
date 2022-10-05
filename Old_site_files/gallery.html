@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body onload="centerSlide()" onresize="centerSlide()">
+
+	<div id="closeButton" onclick="window.location='index.html';">
+		<div id="closeText"></div>
+	</div>
+	<div id="backContainer" onmousedown="prevSlide()" onmouseup="centerSlide()" onmousemove="centerSlide()">
+		<div id="backButton"></div>
+	</div>
+	<img id="slide" src="MainPics/Turner.jpg" onload="centerSlide()">
+	<div id="nextContainer" onmousedown="nextSlide()" onmouseup="centerSlide()" onmousemove="centerSlide()">
+		<div id="nextButton"></div>
+	</div>
+</body>
+<script type='text/javascript' src='scripts.js'></script>
+</html>
+
+
+
+
+
+

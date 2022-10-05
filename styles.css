@@ -1,0 +1,725 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/*CSS RESET*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+/* BEGIN STYLING */
+
+
+
+
+body{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    font-family: Avenir;
+    src: url(Fonts/AvenirLTStd-Light.otf);
+    background-color: rgb(36, 36, 36);;
+}
+
+
+/* Styles for the loading screen */
+#loadingScreen{
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(247, 247, 247);
+    z-index: 99;
+    transition: opacity 1s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+/* Styles for the mobile navbar */
+#navBar{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 8rem;
+    padding-top: 0.2rem;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-start;
+    background-color: rgb(36, 36, 36);
+    box-shadow: 0 0 15px 5px;
+    z-index: 99;
+    transition: opacity 1s ease-in;
+}
+#navBar .button{
+    box-shadow: none;
+    height: 100%;width: 27%;
+    font-size: 1.7rem; 
+    font-weight: 600; 
+    color: rgb(230, 230, 230); 
+    background-color: rgb(36, 36, 36);
+}
+#navBar .button:active{font-weight: 800; text-decoration: underline;}
+#navBar .button:hover{opacity: 1;}
+#navBar .logoBannerContainer{height: 100%; width: 80%;}
+#navBar .logoBanner{height: 100%;width: 100%; padding-bottom: 0.5rem;}
+#backButtonArrow{display: none; margin-right: 5%; margin-left: 12%;}
+.galleryFocus #backButtonArrow{display: flex;}
+.galleryFocus #navbarGalleryAccessText:active{text-decoration: underline;}
+
+
+/* Gallery styles */
+#gallery{
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    box-shadow: 0 0 10px 2px white;
+    display: flex;
+}
+.galleryFocus #gallery{
+    width: 75%;
+    height: 90%;
+    border-radius: 4px;
+}
+.gallerySlide{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    transition: opacity 1s ease-in-out;
+}
+.galleryFocus .gallerySlide{
+    transition: opacity 0.25s;
+    border-radius: 4px;
+}
+.galleryButton{
+    display: none;
+    opacity: 0;
+    transition: opacity 0.25s ease-in;
+    height: 5rem;
+    width: 5rem;
+}
+#prevSlide{
+    margin-right: 40%;
+}
+#nextSlide{
+    margin-left: 40%;
+}
+#exitGalleryButton{
+    position: absolute;
+    top: 2rem;
+    right: 0rem;
+}
+.buttonGraphic{
+    color: white;
+}
+.buttonGraphic:hover{
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+
+/* Content Container styles */
+#contentContainer{
+    display: flex;
+    width: 700px;
+    height: 500px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap; 
+    position: absolute;
+    transition: opacity 0.5s ease-in;
+}
+
+#thankyouScreen{
+    display: none;
+    width: 700px;
+    height: 500px;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    text-align: center;
+    background-color: white;
+    z-index: 99;
+    opacity: 1;
+    transition: opacity 0.75s ease-in;
+    padding: 10px 10px 10px 10px;
+    box-shadow: 0 0 10px 2px;
+    border-radius: 2px;
+}
+
+
+/* Styles for the sub components of content container */
+#mainSection{
+    display: flex;
+    width: 100%;
+    height: 78%;
+    background-color: white;
+    border-radius: 2px;
+    box-shadow: 0 0 10px 2px;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    transition: opacity 0.5s ease-in;
+}
+.logoBannerContainer{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 18%;
+    width: 100%;
+    flex-direction: column;
+}
+.logoBanner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 80%;
+}
+.logoBanner img{
+    max-width: 100%;
+    max-height: 100%;
+}
+.heading{
+    font-size: 13pt;
+    font-weight: 500;
+    margin: 2% 0 3% 0 ;
+    width: 80%;
+    text-align: center;
+}
+.mainText{
+    width: 90%;
+	height: 47%;
+	font-size: 13pt;
+	font-family: Avenir;
+	line-height: 25px;
+    text-align: justify;
+}
+.copywright{
+    padding-top: 1em;
+    font-size: 11pt;
+    color: lightgray;
+}
+#buttonContainer{
+    width: 100%;
+    height: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    align-self: flex-end;
+    transition: opacity 0.5s ease-in;
+}
+.button {
+    display: flex;
+    height: 90%;
+    width: 50%;
+	box-shadow: 0 0 10px 2px;
+	background-color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    transition: opacity 0.1s ease-in, font-size 0.1s ease-in, font-weight 0.1s ease-in;
+    font-size: 13pt;
+    font-weight: 300;
+}
+.button:hover {
+	opacity: 0.85;
+	cursor: pointer;
+    font-weight: 500;
+    font-size: 14pt;
+}
+.galleryAccessButton{
+    margin: 5% 1% 5% 0;
+}
+.contactAccessButton{
+    margin: 5% 0 5% 1%;
+}
+
+
+/* Styles for the desktop contact form */
+#desktopFormContainer{
+    display: none;
+    position: absolute;
+    opacity: 0;
+    height: 90px;
+    width: 49%;
+    box-shadow: 0 0 10px 2px;
+    background-color: white;
+    right: 0;
+    justify-self: flex-end;
+    align-self: flex-end;
+    border-radius: 2px;
+    margin-bottom: 5px;
+    transition: width 0.5s ease-out, height 0.5s ease-out, opacity 0.5s ease-out, margin-bottom 0.5s ease-out;
+    z-index: -1;
+}
+.contactForm{
+    display: none;
+}
+form{
+    width: 100%;
+    line-height: 2;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+#inputNameGroup{
+    width: 47%;
+}
+#inputPhoneGroup{
+    width: 47%;
+}
+#namePhoneContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+#desktopForm{
+    width: 100%;
+    padding: 5% 5% 5% 5%;
+    height: 90%;
+    display: block;
+    opacity: 0;
+    transition: opacity 0.5s ease-in;
+    position: absolute;
+    background-color: white;
+    border-radius: 2px;
+}
+#desktopForm .heading{
+    text-align: left;
+    width: 49%;
+    height: 10%;
+    font-size: 1.5rem;
+    display: inline-block;
+}
+.form-text{
+    font-size: 0.8rem;
+}
+#backButton:hover{
+	cursor: pointer;
+    font-weight: 500;
+    color: rgb(68, 67, 67);
+}
+#mobileForm{
+    transition: opacity 0.5s ease-in;
+}
+#mobileForm h3{
+    text-align: center;
+    width: 100%;
+}
+#formSubmitButton:active{
+    background-color: darkblue;
+}
+#mobileCopywright{
+    display: none;
+}
+
+
+/* Styles for the mobile version of the gallery */
+#swiperGallery{
+    display: none;
+}
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+.swiper-wrapper{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-content: center;
+}
+.swiper-slide {
+    width: 100%;
+    height: 45%;
+    object-fit: cover;
+    align-self: center;
+    border-radius: 10px;
+}
+#paginationBullets{
+    margin-bottom: 20%;
+}
+.swiper-pagination-bullet{
+    width: 40px !important; 
+    height: 40px !important;
+    background: lightgray !important;
+}
+.swiper-pagination-bullet-active{
+background: white;
+}
+
+
+
+/* Styles for small desktop window */
+@media (max-width: 799px){ 
+    body{
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 60rem;
+    }
+
+
+    #navBar{
+        display: flex;
+        height: 3rem;
+    }
+    #navBar .button{
+        font-size: 0.9rem;
+    }
+
+
+    #gallery{
+        width: 100%;
+        height: 17rem;
+        top: 3rem;
+        box-shadow: 0 0 10px 2px white;
+    }
+    .gallerySlide{
+        height: 17rem;
+        display: block;
+        align-self: flex-start;
+        transition: opacity 1s ease-in-out, height 0.75s ease-in, width 0.75s ease-in;
+    }
+    .galleryButton{
+        height: 10vh;
+        width: 10vw;
+    }
+    #nextSlide{
+        position: absolute;
+        margin: 0;
+        right: 2vw;
+        top: 45vh;
+    }
+    #prevSlide{
+        position: absolute;
+        margin: 0;
+        left: 2vw;
+        top: 45vh;
+    }
+
+
+
+    #contentContainer{
+        width: 100%;
+        height: 57rem;
+        top: 20rem;
+        background-color: white;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    .mainText{
+        font-size: 1rem; 
+        line-height: 1.9;
+        text-align: left;
+        width: 80%;
+    }
+    #mainSection{
+        height: 40%;
+        box-shadow: none;
+        display: flex;
+        z-index: 1;
+        transition: opacity 0.5s ease-in;
+    }
+    .heading{
+        font-size: 1.2rem;
+        margin: 2.2rem 0 2rem 0;
+        text-align: left;
+    }
+    #mobileCopywright{
+        display: block;
+        font-size: 0.8rem;
+        padding-top: 2rem;
+    }
+
+    
+    #contentContainer .button{
+        display: none;
+    }
+    #mainSection .logoBannerContainer{
+        display: none;
+    }
+    #mainSection .hrBreak{
+        display: none;
+    }
+    #buttonContainer{
+        display: none;
+    }
+    #desktopForm{
+        display: none;
+    }
+    #desktopFormContainer{
+        display: none;
+    }
+    h3{
+        display: none; 
+    }
+    
+
+   
+    #mobileFormContainer{
+        width: 100%;
+        display: flex;
+        height: 60%;
+        background-color: white;
+    }
+    .form-control{
+        font-size: 0.9rem;
+    }
+    #mobileForm{
+        width: 100%;
+        padding: 0 10% 0 10%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: white;
+        flex-direction: column;
+    }
+    form{
+        width: 100%;
+        line-height: 2.0;
+        font-size: 1rem;
+    }
+    .form-text{
+        font-size: 0.8rem;
+    }
+    #mobileSubmitButton{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        height: 3rem;
+        font-size: 1rem !important;
+    }
+
+
+    body.galleryFocus{
+        height: 100vh;
+        width: 100vw;
+    }
+    .galleryFocus #navBar{
+        display: none;
+    }
+    .galleryFocus .gallerySlide{
+        align-self: center;
+        height: 100%;
+        border-radius: 4px;
+    }
+    .galleryFocus #gallery{
+        top: 5%;
+        width: 75%;
+        height: 90%;
+        border-radius: 4px;
+        z-index: 0;
+    }
+    .galleryFocus #mobileForm{
+        display: none;
+    }
+}
+
+
+/* Styles for mobile */
+@media only screen and (max-device-width: 799px) {
+    #navBar{
+        display: flex;
+        transition: none !important;
+    }
+    
+
+    body{
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 160rem;
+    }
+    
+
+    #gallery{
+        width: 100%;
+        height: 42rem;
+        top: 8rem;
+        box-shadow: none;
+        z-index: 2;
+    }
+    #gallery:active{
+        opacity: 0.4;
+    }
+    .gallerySlide{
+        display: block;
+        height: 42rem;
+    }
+    
+
+    #contentContainer{
+        width: 100%;
+        height: 115rem;
+        top: 50rem;
+        background-color: white;
+        transition: none;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    #mainSection{
+        height: 40%;
+        box-shadow: none;
+        transition: none;
+    }
+    .heading{
+        font-size: 2.8rem;
+        margin: 4.5rem 0 3rem 0;
+        text-align: left;
+    }
+    .mainText{
+        font-size: 2.28rem; 
+        height: 75%; 
+        line-height: 1.5;
+        text-align: left;
+        width: 80%;
+    }
+    #emailHelp{
+        font-size: 1.7 rem;
+    }
+    h3{
+       display: none; 
+    }
+    
+
+    #buttonContainer{
+        display: none;
+    }
+    #contentContainer .button{
+        display: none;
+    }
+    #mainSection .logoBannerContainer{
+        display: none;
+    }
+    #mainSection .hrBreak{
+        display: none;
+    }
+    
+
+
+
+    #mobileFormContainer{
+        width: 100%;
+        display: flex;
+        background-color: white;
+        height: 55%;
+    }
+    #mobileForm{
+        width: 100%;
+        padding: 0 10% 0 10%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        background-color: white;
+        flex-direction: column;
+        margin-top: -1px;
+        transition: none;
+    }
+    form{
+        width: 100%;
+        line-height: 2.5;
+        font-size: 2.5rem;
+    }
+    .form-text{
+        font-size: 1.5rem;
+    }
+    #formSubmitButton{
+        font-size: 2.5rem;
+    }
+    .form-control{
+        font-size: 1.6rem;
+    }
+    #mobileCopywright{
+        display: block;
+        font-size: 1.5rem;
+        padding-top: 50px;
+    }
+
+
+
+    body.galleryFocus{
+        height: 100vh;
+    }
+    .galleryFocus #mainsection{
+        display: none;
+    }
+    .galleryFocus #contentContainer{
+        display: none;
+    }
+    .galleryFocus #mobileForm{
+        display: none;
+    }
+
+    .galleryFocus #gallery{
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        top: 0;
+    }
+    .galleryFocus .gallerySlide{
+        border-radius: 4px;
+        align-self: center;
+        transition: opacity 0.25s;
+    }
+}
+
+
+
+
+
+
+
